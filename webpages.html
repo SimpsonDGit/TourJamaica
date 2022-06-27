@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<!-- Include meta tag to ensure proper rendering and touch zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Include jQuery Mobile stylesheets -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		
+		<!-- Include the jQuery library -->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		
+		<!-- Include the jQuery Mobile library -->
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		
+		<!--Map Files-->
+		<script src="map.js"></script>
+		<link rel="stylesheet" href="map.css">
+		<script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBpNBcp3eET38defXlvTQjbJPf6cjd8eh4&callback=initMap"></script>
+		
+		
+		<!--Panel Initialization-->
+		<script type="text/javascript">
+			$(document).on('pagebeforeshow', '#index', function(){ });
+			
+			$(document).ready(function()
+			{
+				$("#page").on("swiperleft", function(event, ui)
+				{
+					$("#mypanel").panel("open");
+				})
+			});
+		</script>
+		
+		<
+		<style>
+			.ui-li-thumb,. ui-list view. ui-li-icon 
+			{
+			  left: 1px;
+			  max-height: 120px !important;
+			  max-width: 120px !important;
+			  position: absolute;
+			  top: 0;
+			}
+			
+			img 
+			{
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+		
+		
+ 	</head>
+
+	<body>
+		<!--Index Page-->
+		<div data-role="page" id="index" class="ui-responsive-panel">
+		
+			<!--Header-->
+			<div data-theme="b"  data-role="header">
+			
+			<!--Access to panel-->
+				<a href="#myPanel" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-bars">Panel</a>	
+				<h1>Discover Jamaica</h1>
+			</div>
+			
+			<!--Main Content-->		
+			<div data-role="main" class="ui-content">
+			
+				<!--Panel Nav-->
+				<div data-role="panel" id="myPanel" data-theme="b" data-display="overlay">
+					<center><h1>Site Pages</h2></center>
+					<a href="#gallery" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Gallery</a>
+					<a href="#historyp" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >About JA</a>
+					<a href="#map-page" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Travel</a>
+				</div>
+				
+				<center><img src="welcome.png" style="max-width:100; height:auto" /></center>
+				<br>
+				<hr><br><br>
+				<!--listview of Content-->
+				<div>
+					<ul data-role="listview" data-inset="true" class="ui-alt-icon" > 
+						<li>
+							<a href= "#gallery">
+							<img src ="galley.jpg" width="110px"/>
+							<h1>What a sight to see!</h1>
+							<h2>Take a peek at some of the most beautiful and historic sites to visit in our gallery </h2>
+							</a>
+						</li>
+						<li>
+							<a href= "#historyp">
+							<img src ="history.jpg"/>
+							<h1>Did you know?</h1>
+							<h2>Read on some of Jamaica's history and culture</h2>
+							</a>
+						</li>
+						<li>
+							<a href= "#map-page">
+							<img src ="poi.jpg"/>
+							<h1>Come Visit</h1>
+							<h2>Find places of interest that could be right around the corner</h2>
+							</a>
+						</li>
+					</ul>
+				</div>
+					
+					<div data-role="content">	
+					</div>
+			</div>
+		
+			<!--Footer-->
+			<div data-role="footer" data-theme="b">
+				<h1> &copy; IrieKulture </h1>
+			</div>
+		</div>
+		
+		<!--Gallery Page-->
+		<div data-role="page" id="gallery">
+			<!--Header-->
+			<div data-theme="b"  data-role="header">
+			
+			<!--Access to panel-->
+				<a href="#myPanel" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-bars">Panel</a>	
+				<h1>Land of Wood & Water</h1>
+			</div>
+			
+			<!--Main Content-->		
+			<div data-role="main" class="ui-content">
+			
+				<!--Panel Nav-->
+				<div data-role="panel" id="myPanel" data-theme="b" data-display="overlay">
+					<center><h1>Site Pages</h2></center>
+					<a href="#index" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Home</a>
+					<a href="#historyp" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >About JA</a>
+					<a href="#map-page" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Travel</a>
+				</div>
+				<br><br>
+				<center>
+					<a href="#stadia" data-rel="popup" data-position-to="window"  > 
+					<img src="stadium.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="stadia"data-transition="slide">
+						<img src="stadium.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						<h2>National Stadium</h2>
+					</div>
+					
+					<a href="#bob" data-rel="popup" data-position-to="window" > 
+					<img src="bobMarl.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="bob" data-transition="flip">
+						<img src="bobMarl.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						 <h2>Bob Marley Museum</h2>
+					</div>
+					
+					<a href="#emanci" data-rel="popup" data-position-to="window"> 
+					<img src="emancipation.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="emanci" data-transition="turn">
+						<img src="emancipation.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						 <h2>Emancipation Park</h2>
+					</div>
+					<br>
+					
+					<a href="#hall" data-rel="popup" data-position-to="window"> 
+					<img src="rose.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="hall" data-transition="pop">
+						<img src="rose.jpg" style="max-width:100; height:auto" alt="AltText">  
+						<h2>Rose Hall</h2>
+					</div>
+					
+					<a href="#dev" data-rel="popup" data-position-to="window"> 
+					<img src="devonHou.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="dev" data-transition="pop">
+						<img src="devonHou.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						<h2>Devon House</h2>
+					</div>
+					<br>
+					
+					<a href="#museo" data-rel="popup" data-position-to="window"> 
+					<img src="museum.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="museo" data-transition="flow">
+						<img src="museum.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						<h2>Institute of Jamaica</h2>
+					</div>
+					
+					<a href="#heroes" data-rel="popup" data-position-to="window"> 
+					<img src="heroes.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="heroes" data-transition="flow">
+						<img src="heroes.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						<h2>National Heroes Park</h2>
+					</div>
+					<br>
+					
+					<a href="#bluel" data-rel="popup" data-position-to="window"> 
+					<img src="bluelag.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="bluel">
+						<img src="bluelag.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						<h2>Blue Lagoon</h2>
+					</div>
+					
+					<a href="#french" data-rel="popup" data-position-to="window"> 
+					<img src="frenchma.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="french">
+						<img src="frenchma.jpg" style="max-width:100; height:auto"" alt="AltText"> 
+						<h2>Frenchman's Cove</h2>
+					</div>
+					<br>
+					
+					<a href="#dunns" data-rel="popup" data-position-to="window"> 
+					<img src="dunns.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="dunns">
+						<img src="dunns.jpg" style="max-width:100; height:auto" alt="AltText">
+						<h2>Dunn's River Falls</h2>
+					</div>
+					
+					<a href="#reach" data-rel="popup" data-position-to="window"> 
+					<img src="reachF.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="reach">
+						<img src="reachF.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						<h2>Reach Falls</h2>
+					</div>
+					
+					<a href="#ysfall" data-rel="popup" data-position-to="window"> 
+					<img src="ysfalls.jpg" alt="Alt Text" style="width:200px;"></a>					
+					<div data-role="popup" id="ysfall">
+						<img src="ysfalls.jpg" style="max-width:100; height:auto" alt="AltText"> 
+						<h2>YS Falls</h2>
+					</div>
+				<center>
+			</div>
+				
+		</div>
+		
+			<!--Footer-->
+			<div data-role="footer" data-theme="b">
+				<h1> &copy; IrieKulture </h1>
+			</div>
+		
+		<!--History Page-->
+		<div data-role="page" id="historyp">
+			<!--Header-->
+			<div data-theme="b"  data-role="header">
+			
+			<!--Access to panel-->
+				<a href="#myPanel" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-bars">Panel</a>	
+				<h1>Get to Know JA</h1>
+			</div>
+			
+			<!--Main Content-->		
+			<div data-role="main" class="ui-content">
+			
+				<!--Panel Nav-->
+				<div data-role="panel" id="myPanel" data-theme="b" data-display="overlay">
+					<center><h1>Site Pages</h2></center>
+					<a href="#index" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Home</a>
+					<a href="#gallery" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Gallery</a>
+					<a href="#map-page" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Travel</a>
+				</div>
+				
+				<div data-role="content" id="body_con">
+					<center>
+					<h3>National Flag</h3>
+					<p><img src="jaflag.jpeg" style="max-width:100; height:auto" /></p> 
+					<div style="margin-left:auto; margin-right:0;">
+					<p>The flag of Jamaica was adopted on 6 August 1962, the original Jamaican Independence Day, the country having gained independence from the British-protected Federation of the West Indies. “The sun shineth, the land is green and the people are strong and creative” is the symbolism of the colours of the flag. Black depicts the strength and creativity of the people; Gold, the natural wealth and beauty of sunlight; and green, hope and agricultural resources.</p>
+					</div>
+					<br>
+					
+					<h3>National Heroes</h3>
+					<p><img src="nheroes.jpg" style="max-width:100; height:auto" /></p> 
+					<p>"Our present is shaped by the tides of history". One cannot truly highlight the nation's beauty without acknowledging our heroes that struggled. They challenged the institutions of slavery, colonialism and dependency thereby changing the course of our history.</p>
+					<br>
+					
+					<h3>Coat of Arms</h3>
+					<p><img src="coat.jpg" style="max-width:100; height:auto" /></p> 
+					<p>The Jamaican national motto is ‘Out of Many One People’, based on the population’s multi-racial roots. 
+					The motto is represented on the Coat of Arms, showing a male and female member of the Taino tribe standing on either side of a shield which bears a red cross with five golden pineapples. 
+					The crest shows a Jamaican crocodile mounted on the Royal Helmet of the British Monarchy and mantling.
+					</p>
+					<br>
+					
+					<h3>National Bird (Doctor Bird)</h3>
+					<p><img src="dbird.jpg" style="max-width:100; height:auto" /></p> 
+					<p>The Doctor Bird (Trochilus polytmus) is the common name for the Swallow-Tail Hummingbird, the national bird of Jamaica. The feathers have a shimmering emerald green and black colour, a trait which is peculiar to this family of birds. The bird is able to fly backwards, this causes the feathers to make a humming sound when it flies</p> 
+					<br>
+					
+					<h3>National Flower (Lignum Vitae)</h3>
+					<p><img src="lignumv.jpg" style="max-width:100; height:auto" /></p> 
+					<p>The Lignum Vitae, the Jamaica National Flower, was found here by Christopher Columbus. Its' name, when translated from Latin, means “wood of life” – probably adopted because of its medicinal qualities.</p>
+					<br>
+					
+					<h3>National Fruit (Ackee) 	| 	National Dish (Ackee & Saltfish)</h3>
+					<p><img src="ack.jpg" style="max-width:100; height:auto" /> <img src="ackee.jpg" style="max-width:100; height:auto" /></p> 
+					<p>Ackee is the national fruit of Jamaica as well as a component of the national dish – ackee and saltfish. This delicacy is enjoyed by many at breakfast or as an entree. Along with saltfish (cod) used in our national dish, Jamaican ackee is a favourite for many when served with pork, salted mackerel, tinned mackerel, etc.</p>
+					</center>
+					
+					
+				</div>
+				
+			</div>
+		
+			<!--Footer-->
+			<div data-role="footer" data-theme="b">
+				<h1> &copy; IrieKulture </h1>
+			</div>
+		</div>
+
+		<!--Map Page-->
+		<div data-role="page" id="map-page" data-url="map-page">
+			<!--Header-->
+			<div data-theme="b"  data-role="header">
+			
+				<!--Access to panel-->
+				<a href="#myPanel" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-bars">Panel</a>	
+				<h1>Points of Interest</h1>
+			</div>
+			
+			<!--Main Content-->		
+			<div data-role="main" class="ui-content" id="panel">
+			
+				<!--Panel Nav-->
+				<div data-role="panel" id="myPanel" data-theme="b" data-display="overlay">
+					<center><h1>Site Pages</h2></center>
+					<a href="#index" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Home</a>
+					<a href="#gallery" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >Gallery</a>
+					<a href="#historyp" data-role="button" class="ui-icon-bars" data-rel="close" data-transition="slide" >About JA</a>
+				</div>
+			</div>	
+			<!--Main Content-->		
+			<div data-role="content" class="ui-content" id="map-canvas">
+				<!--Map Goes Here-->
+			</div>
+			<br>
+			<div data-role="main" class="ui-content" id="aftermap">
+				<center><h1>Sovereign (Liguanea)</h1>
+				<br>
+				Kicking off your tour from one of the top and more central rest points in JA,
+				we start from Sovereign Center in Liguanea, Kingston which supplies you with food, shopping
+				and if you're looking for entertainment check out the movie theater upstairs!
+				<p style=" border-bottom: 6px solid red">
+				<img src="urhere.png" style="width:80px; height:auto" /></p>
+				<br><br>
+				
+				<p><img src="nearby.png" style="width:30px; height:auto" /> PLACES NEARBY</p>
+
+				
+				<h3>Hope Botanical Gardens</h3></center>
+				<img src="hopeg.jpg" align="left" style="width:200px; height:auto" /> <center>
+				<p>If you’re looking to have a peaceful day without leaving Kingston, Hope Botanical Gardens and Zoo is the place for you.
+				The Hope Gardens is spread across 200 acres of land, which was just a small fraction of Major Richard Hope’s estate. It is currently the largest botanical gardens in the Caribbean.</p>
+				<br><br><br><br>
+				
+				<h3>University of Technology(left) & The University of the West Indies(right)</h3>
+				<img src="utech.jpg" style="width:200px; height:auto" />&nbsp&nbsp&nbsp<img src="uwi.jpg" style="width:200px; height:auto" /> 
+				<p>The Papine area is also known for housing Jamiaca's most prestigous universities, <b>University of Technology (UTech)</b> and the <b>University of the West Indies (UWI)</b>.
+				As the prime institutions of tertiary education, they aim to develop and educate the minds of our budding and present labour force.</p>
+				</center>
+				<br>
+				<h3>Bob Marley Museum</h3>
+				<img src="bobmus.jpg"  align="left" style="width:200px; height:auto" /> &nbsp &nbsp&nbsp
+				<center>
+				<p>	The name speaks for itself. Take a peak at one of our #1 tourist destinations, just a stone's throw away from Sovereign Center.
+				Learn about the life and works of one of Jamaica's iconic stars, said to be the <b>King of Reggae, Bob Marley</b>.</p>
+				</center>
+			</div>
+			
+			
+		
+			<!--Footer-->
+			<div data-role="footer" data-theme="b">
+				<h1> &copy; IrieKulture </h1>
+			</div>
+		</div>
+	</body>
+</html>
